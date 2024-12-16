@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Triangle Area Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/dashboard" class="btn btn-secondary mt-4">Go to Dashboard</a>
+        <h1 class="mt-5">Triangle Area Calculator</h1>
+        
+        <!-- Explanation Section -->
+        <div class="mt-4">
+            <h3>What is the Area of a Triangle?</h3>
+            <p>
+                The area of a triangle is the space enclosed within its three sides. The formula to calculate the area of a triangle is:
+            </p>
+            <h4>Formula:</h4>
+            <p>
+                <strong><li th:each="entry : ${triangleFormulaProperties}" th:text="${entry.key} + ': ' + ${entry.value}"></li></strong>
+            </p>
+            <p>
+                In this formula:
+                <ul>
+                    <li><strong>Base (b)</strong> refers to the length of the bottom edge of the triangle.</li>
+                    <li><strong>Height (h)</strong> is the perpendicular distance from the base to the top vertex.</li>
+                </ul>
+            </p>
+
+            <!-- Triangle Image -->
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAACUCAMAAAAu5KLjAAAAYFBMVEX///8AAADm5ub5+fns7OyhoaHZ2dn8/PxNTU2RkZEuLi7z8/Pe3t6EhITHx8fPz881NTVHR0dfX1+2traZmZkWFhZlZWUpKSlycnKvr694eHgdHR0PDw9UVFRqamo8PDx+8LkGAAAELklEQVR4nO2b2XabQAyGLVbbLAaDF7yE93/LjpPT1DQwqzSanvJdxYnt6ABafkmz2aysrKysrKys/Mt0HbcFOhT7fcFtgwY9QM9tg5rsDnDPuK1QEd/gfIZbzG2HggNAWQIcuO2Qkzew22x20OTclkgZoEk2m6SBgdsSGVEDn0GzgybitmWZvIKPT+eJP6AK97Zn374jPCncoNTC7fePN2g5LZHRwf77iYz2EGhqT7aQ/nmVwjbhs0XCDo5vNUdxfEXQ8CjvUL+/ruFectki4QhHxS9CoIbLXxevvEwvbwiIR/FHldlPHtYgSKH94dhJ++76IRDN3mDxIISV2heSzltaCoEaHrMpPHuE5EWLBdF3yRQE78l8SkipPbksF+sDXEJJ7TtoF+9s3IaS2rO7zE/qQFR7fJXKciHcryF4US2UuezvQnkEEJTiRtUy6qHhv5wpjIr6ohj5U3upERhFWGUukEWaUTuIcDJm1S6StkZX67CQ8r3RQqXztopXtX91ttQkDWdq1y/PWVX7Ds6aETE+86X27KSfX2o4cQWls4kQP8KZzhIZZoJsXtTRkzzN5j89PDm8SChzo2ZBwaLay7tpKOw4el9X2Jp+ZAtXCktkHCy0g1AjnsdahVW4FunAb+9rWFTmMoRq9zrWSoz95wvhRT6DUgWj3QdHvcIPB/sO1lJPjAKHUZ/P3pe4JNZxuvTWSoz3Llkvhb2fy9k7DfVzZfsBB9eW5XIzFBXX1tWrNYZlyzL1w3VSnsGD3ou27gG6Mi+uTBng4lw9FJImOA7RiPEfBhhpvWiHMoaknrVjFbY2RbUBRyyZ8EE5a+/QhjzJha73lWzx8lxP1/uam5nbQjdrx63BXKpBKTd4Yn7dkya1YweR7ESh2k07W2pIel92ylwGhWpPTvjfOcAJ+3JWuP7zBUJROIWmlK0fuKq9ONN0Kyrc3lcHd5ICMbLsRc3jpsxloKr2HkaiCW4+4kXjiLDq6tDW6F7CmmwcnqNtrAhlTjiBKLFCnebM3BakWXtP3EITYQTBi+hPq+juDkihH5JgqPaDc2dLjSgYXAvkp48B3tW1/OrwS8IZRDHrlD8ST3tjKYwuVwNTmctwU+004m+OGk72nkrakJpyhA/bj/pcyrGfL2J2ttRY974Gr4clbVW77czcFsvmKYkyl/G0KRgz78eia4sjpBwH+yzGJN2Po2n0lMbSMG44NsVS0w35nmcZuDWL1KXBAikmZnmPVJnLMFPtHdWUQYnRtGTvc6lpSgWN7ltFLc12JCXW1gu+F+6maI8i9LfZKdDdkFedpqJG87RW63+1dorWOrDnFcsZdArdBGXnxI1BrdqFJGE/+l4oU7s/ZS7joFLtbAc8pigOpbx2avOYnVyucIotPCAIHjIXSbmte2c5tSdRQIRyrH1lZWVlZWXl/+MXp7orWmvB2zEAAAAASUVORK5CYII=" alt="Triangle Image" class="img-fluid" style="max-width: 400px;">
+
+            <p class="mt-3">
+                You can use the calculator below to compute the area of any triangle by inputting the base and height.
+            </p>
+        </div>
+
+        <!-- Triangle Area Calculator Form -->
+        <form action="/calculateArea" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="base">Base of Triangle (b):</label>
+                <input type="number" id="base" name="base" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height of Triangle (h):</label>
+                <input type="number" id="height" name="height" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+
+        <!-- Display result if there is an area -->
+        <div th:if="${area != null}" class="mt-4">
+            <h3>The area of the triangle is: <span th:text="${area}"></span> square units</h3>
+        </div>
+    </div>
+</body>
+</html>

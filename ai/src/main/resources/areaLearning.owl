@@ -1,0 +1,947 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/pratap/ontologies/2024/11/areaLearning"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/pratap/ontologies/2024/11/areaLearning">
+    <Prefix name="" IRI="http://www.semanticweb.org/pratap/ontologies/2024/11/areaLearning/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Circle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Question"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rectangle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Square"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TestResult"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Triangle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasQuestion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTestResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#answer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#area"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#firstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lastName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#level"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#question"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#score"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#username"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question10"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question17"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question18"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question19"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question20"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question21"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question22"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question23"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question25"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question26"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question27"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question28"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question29"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#circleformula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#e.hazard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pratap.dong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#rectangleformula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#squareformula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#triangleFormula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Question30"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Circle"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rectangle"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Square"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Triangle"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question12"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question15"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question17"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question18"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question19"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question20"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question21"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question22"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question23"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question24"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question25"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question26"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question27"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question28"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question29"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question30"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Question"/>
+        <NamedIndividual IRI="#Question9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Circle"/>
+        <NamedIndividual IRI="#circleformula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Shape"/>
+        <NamedIndividual IRI="#circleformula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#e.hazard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rectangle"/>
+        <NamedIndividual IRI="#rectangleformula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Square"/>
+        <NamedIndividual IRI="#squareformula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Triangle"/>
+        <NamedIndividual IRI="#triangleFormula"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question1"/>
+        <Literal>25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question1"/>
+        <Literal>What is the area of a triangle with base 10 and height 5?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question10"/>
+        <Literal>13.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question10"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question10"/>
+        <Literal>What is the area of a triangle with base 9 and height 3?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question11"/>
+        <Literal>150</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question11"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question11"/>
+        <Literal>What is the area of a triangle with base 20 and height 15?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question12"/>
+        <Literal>225</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question12"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question12"/>
+        <Literal>What is the area of a square with side 15?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question13"/>
+        <Literal>240</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question13"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question13"/>
+        <Literal>What is the area of a rectangle with length 20 and width 12?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question14"/>
+        <Literal>1256.64</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question14"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question14"/>
+        <Literal>What is the area of a circle with radius 20?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question15"/>
+        <Literal>120</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question15"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question15"/>
+        <Literal>What is the area of a triangle with base 24 and height 10?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question16"/>
+        <Literal>24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question16"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question16"/>
+        <Literal>What is the area of a triangle with base 8 and height 6?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question17"/>
+        <Literal>25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question17"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question17"/>
+        <Literal>What is the area of a square with side 5?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question18"/>
+        <Literal>28</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question18"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question18"/>
+        <Literal>What is the area of a rectangle with length 7 and width 4?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question19"/>
+        <Literal>50.24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question19"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question19"/>
+        <Literal>What is the area of a circle with radius 4?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question2"/>
+        <Literal>16</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question2"/>
+        <Literal>What is the area of a square with side 4?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question20"/>
+        <Literal>13.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question20"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question20"/>
+        <Literal>What is the area of a triangle with base 9 and height 3?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question21"/>
+        <Literal>60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question21"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question21"/>
+        <Literal>What is the area of a triangle with base 15 and height 8?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question22"/>
+        <Literal>100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question22"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question22"/>
+        <Literal>What is the area of a square with side 10?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question23"/>
+        <Literal>54</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question23"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question23"/>
+        <Literal>What is the area of a rectangle with length 9 and width 6?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question24"/>
+        <Literal>452.39</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question24"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question24"/>
+        <Literal>What is the area of a circle with radius 12?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question25"/>
+        <Literal>40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question25"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question25"/>
+        <Literal>What is the area of a triangle with base 16 and height 5?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question26"/>
+        <Literal>108</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question26"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question26"/>
+        <Literal>What is the area of a triangle with base 18 and height 12?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question27"/>
+        <Literal>400</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question27"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question27"/>
+        <Literal>What is the area of a square with side 20?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question28"/>
+        <Literal>375</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question28"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question28"/>
+        <Literal>What is the area of a rectangle with length 25 and width 15?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question29"/>
+        <Literal>1017.88</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question29"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question29"/>
+        <Literal>What is the area of a circle with radius 18?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question3"/>
+        <Literal>18</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question3"/>
+        <Literal>What is the area of a rectangle with length 6 and width 3?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question30"/>
+        <Literal>210</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question30"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question30"/>
+        <Literal>What is the area of a triangle with base 30 and height 14?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question4"/>
+        <Literal>153.94</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question4"/>
+        <Literal>What is the area of a circle with radius 7?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question5"/>
+        <Literal>6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question5"/>
+        <Literal>What is the area of a triangle with base 6 and height 2?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question6"/>
+        <Literal>24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question6"/>
+        <Literal>What is the area of a triangle with base 8 and height 6?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question7"/>
+        <Literal>25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question7"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question7"/>
+        <Literal>What is the area of a square with side 5?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question8"/>
+        <Literal>28</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question8"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question8"/>
+        <Literal>What is the area of a rectangle with length 7 and width 4?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#answer"/>
+        <NamedIndividual IRI="#Question9"/>
+        <Literal>50.24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#Question9"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#question"/>
+        <NamedIndividual IRI="#Question9"/>
+        <Literal>What is the area of a circle with radius 4?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#area"/>
+        <NamedIndividual IRI="#circleformula"/>
+        <Literal>pi*radius*radius</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#e.hazard"/>
+        <Literal>Eden</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#e.hazard"/>
+        <Literal>Hazard</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#e.hazard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#score"/>
+        <NamedIndividual IRI="#e.hazard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#username"/>
+        <NamedIndividual IRI="#e.hazard"/>
+        <Literal>e.hazard</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+        <Literal>Pratap</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+        <Literal>Dong</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#level"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#score"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#username"/>
+        <NamedIndividual IRI="#pratap.dong"/>
+        <Literal>pratap.dong</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#area"/>
+        <NamedIndividual IRI="#rectangleformula"/>
+        <Literal>length*width</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#area"/>
+        <NamedIndividual IRI="#squareformula"/>
+        <Literal>length*length</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#area"/>
+        <NamedIndividual IRI="#triangleFormula"/>
+        <Literal>1/2*width*height</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTestResult"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <Class IRI="#Question"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTestResult"/>
+        <Class IRI="#TestResult"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area"/>
+        <Class IRI="#Circle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area"/>
+        <Class IRI="#Rectangle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area"/>
+        <Class IRI="#Shape"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area"/>
+        <Class IRI="#Square"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area"/>
+        <Class IRI="#Triangle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#firstName"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#lastName"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#level"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#score"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#username"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#area"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#firstName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lastName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#level"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#score"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#username"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 5.5.1) https://github.com/owlcs/owlapi/ -->
+
+

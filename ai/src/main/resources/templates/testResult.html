@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Area Learning</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Test Result</h2>
+        <p>Your Score: <span th:text="${score}"></span> out of <span th:text="${total}"></span></p>
+        <h4><span th:text="${feedback}"></span></h4>
+
+        <!-- Feedback to guide user through their next level -->
+        <div th:if="${feedback == 'Excellent! You answered all the questions correctly!'}">
+            <p>Congratulations! You've passed this level! You can proceed to the next level.</p>
+        </div>
+        <div th:if="${feedback != 'Excellent! You answered all the questions correctly!'}">
+            <p>Don't worry, keep practicing! You can retake the test.</p>
+        </div>
+
+        <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

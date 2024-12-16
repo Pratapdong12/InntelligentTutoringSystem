@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle Area Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/dashboard" class="btn btn-secondary mt-4">Go to Dashboard</a>
+        <h1 class="mt-5">Rectangle Area Calculator</h1>
+
+        <!-- Explanation Section -->
+        <div class="mt-4">
+            <h3>What is the Area of a Rectangle?</h3>
+            <p>
+                The area of a rectangle is the amount of space enclosed within its four sides. A rectangle has opposite sides of equal length, and the area is calculated by multiplying the length by the width. The formula to calculate the area of a rectangle is:
+            </p>
+            <h4>Formula:</h4>
+            <p>
+                
+                <strong><li th:each="entry : ${rectangleFormulaProperties}" th:text="${entry.key} + ': ' + ${entry.value}"></li></strong>
+            </p>
+            <p>
+                In this formula:
+                <ul>
+                    <li><strong>Length (l)</strong> refers to the longer side of the rectangle.</li>
+                    <li><strong>Width (w)</strong> refers to the shorter side of the rectangle.</li>
+                </ul>
+            </p>
+
+            <!-- Rectangle Image -->
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAG1BMVEX///8AAACamprQ0NCXl5fn5+eTk5N7e3vV1dV397rFAAAA3UlEQVR4nO3cWw3DABADwTRv/ohLwR+nOo1mAFhaAl4WAAAAAAAAAAAAAAAAAADgDx3n+lTnMVK4fZ5rU5gWXvf2PPc1WLiODE1bBwv3kaFpu8KUwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1k4Xv/6d5/8fQYynMvP+vDQAAAAAAAAAAAAAAAAAA+LEvMZEOgZADqPIAAAAASUVORK5CYII=" alt="Rectangle Image" class="img-fluid" style="max-width: 400px;">
+
+            <p class="mt-3">
+                You can use the calculator below to compute the area of any rectangle by entering its length and width.
+            </p>
+        </div>
+
+        <!-- Rectangle Area Calculator Form -->
+        <form action="/calculateRectangleArea" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="length">Length of Rectangle (l):</label>
+                <input type="number" id="length" name="length" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="width">Width of Rectangle (w):</label>
+                <input type="number" id="width" name="width" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+
+        <!-- Display result if there is an area -->
+        <div th:if="${area != null}" class="mt-4">
+            <h3>The area of the rectangle is: <span th:text="${area}"></span> square units</h3>
+        </div>
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Area Learning</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Test</h2>
+        <!-- Display message if the student's level is 3 -->
+        <div th:if="${completedTest}" class="alert alert-success">
+            You have completed the test! Congratulations!
+        </div>
+        <!-- Show a reset level button if the student's level is 4 -->
+        <div th:if="${completedTest}">
+            <form th:action="@{/resetLevel}" method="POST">
+                <button type="submit" class="btn btn-warning">Reset Level</button>
+            </form>
+        </div>
+
+        <form id="quizForm" th:action="@{/test}" method="post">
+            <div th:each="question, iterStat : ${questions}">
+                <p th:text="${question.question}"></p>
+            
+                <input type="text" th:name="'answers[' + ${iterStat.index} + ']'" placeholder="Enter your answer" required/><br><br>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmModal">Submit Test</button>
+        </form>
+    </div>
+
+    <!-- Modal for confirmation -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Are you sure you want to submit?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Once you submit, your answers cannot be changed.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" id="confirmSubmit">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to handle form submission after confirmation
+        document.getElementById("confirmSubmit").addEventListener("click", function () {
+            document.getElementById("quizForm").submit();  // Submit the form after confirmation
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Area Learning</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Add a New Question</h2>
+        <form th:action="@{/addQuestion}" method="post">
+            <div class="form-group">
+                <label for="questionName">Question Name</label>
+                <input type="text" class="form-control" id="questionName" name="questionName" required>
+            </div>
+            <div class="form-group">
+                <label for="questionText">Question</label>
+                <input type="text" class="form-control" id="questionText" name="questionText" required>
+            </div>
+            <div class="form-group">
+                <label for="correctAnswer">Correct Answer</label>
+                <input type="text" class="form-control" id="correctAnswer" name="correctAnswer" required>
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <select class="form-control" id="level" name="level" required>
+                    <option value="" disabled selected>Select Level</option>
+                    <option value="1">Level 1</option>
+                    <option value="2">Level 2</option>
+                    <option value="3">Level 3</option>
+                    <option value="4">Level 4</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Question</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

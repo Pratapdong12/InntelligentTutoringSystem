@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .feedback {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .btn-custom {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center">Test Result</h2>
+    <div class="score text-center">
+        <p>Your score: <span th:text="${score}"></span> out of 10</p>
+    </div>
+
+    <div class="feedback">
+        <p><strong>Feedback:</strong> <span th:text="${feedback}"></span></p>
+    </div>
+
+    <!-- Display next level message -->
+    <div th:if="${nextLevel}" class="alert alert-success">
+        <p>Congratulations! You've advanced to the next level.</p>
+        <p>Click <a href="/dashboard" class="btn btn-success btn-sm">here</a> to go to your dashboard.</p>
+    </div>
+
+    <!-- Display retry message if score is below 7 -->
+    <div th:if="${score < 7}" class="alert alert-danger">
+        <p>Unfortunately, you didn't pass the test. You need a score of 7 to proceed.</p>
+        <p>Try again or review the materials.</p>
+        
+    </div>
+
+    <p class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-primary btn-custom">Back to Dashboard</a>
+    </p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Learning Dashboard</title>
+    <!-- Bootstrap 4.5 CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar-brand {
+            color: #ffffff;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #d6d6d6;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+        .card-body {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .section-heading {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+        /* Make the page more responsive */
+        @media (max-width: 767px) {
+            .card-deck .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">Area Learning</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container mt-5">
+        <h2>Welcome, <span th:text="${student.username}">Student</span></h2>
+        <h3>Your Current Level: 
+        <span th:text="${student.currentLevel == 1 ? 'Beginner' : (student.currentLevel == 2 ? 'Medium' : 'Hard')}"></span>
+        </h3>
+        <h4 class="mb-4">Learn About Areas</h4>
+        
+        <div class="row">
+            <!-- Triangle Section -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAACUCAMAAAAu5KLjAAAAYFBMVEX///8AAADm5ub5+fns7OyhoaHZ2dn8/PxNTU2RkZEuLi7z8/Pe3t6EhITHx8fPz881NTVHR0dfX1+2traZmZkWFhZlZWUpKSlycnKvr694eHgdHR0PDw9UVFRqamo8PDx+8LkGAAAELklEQVR4nO2b2XabQAyGLVbbLAaDF7yE93/LjpPT1DQwqzSanvJdxYnt6ABafkmz2aysrKysrKys/Mt0HbcFOhT7fcFtgwY9QM9tg5rsDnDPuK1QEd/gfIZbzG2HggNAWQIcuO2Qkzew22x20OTclkgZoEk2m6SBgdsSGVEDn0GzgybitmWZvIKPT+eJP6AK97Zn374jPCncoNTC7fePN2g5LZHRwf77iYz2EGhqT7aQ/nmVwjbhs0XCDo5vNUdxfEXQ8CjvUL+/ruFectki4QhHxS9CoIbLXxevvEwvbwiIR/FHldlPHtYgSKH94dhJ++76IRDN3mDxIISV2heSzltaCoEaHrMpPHuE5EWLBdF3yRQE78l8SkipPbksF+sDXEJJ7TtoF+9s3IaS2rO7zE/qQFR7fJXKciHcryF4US2UuezvQnkEEJTiRtUy6qHhv5wpjIr6ohj5U3upERhFWGUukEWaUTuIcDJm1S6StkZX67CQ8r3RQqXztopXtX91ttQkDWdq1y/PWVX7Ds6aETE+86X27KSfX2o4cQWls4kQP8KZzhIZZoJsXtTRkzzN5j89PDm8SChzo2ZBwaLay7tpKOw4el9X2Jp+ZAtXCktkHCy0g1AjnsdahVW4FunAb+9rWFTmMoRq9zrWSoz95wvhRT6DUgWj3QdHvcIPB/sO1lJPjAKHUZ/P3pe4JNZxuvTWSoz3Llkvhb2fy9k7DfVzZfsBB9eW5XIzFBXX1tWrNYZlyzL1w3VSnsGD3ou27gG6Mi+uTBng4lw9FJImOA7RiPEfBhhpvWiHMoaknrVjFbY2RbUBRyyZ8EE5a+/QhjzJha73lWzx8lxP1/uam5nbQjdrx63BXKpBKTd4Yn7dkya1YweR7ESh2k07W2pIel92ylwGhWpPTvjfOcAJ+3JWuP7zBUJROIWmlK0fuKq9ONN0Kyrc3lcHd5ICMbLsRc3jpsxloKr2HkaiCW4+4kXjiLDq6tDW6F7CmmwcnqNtrAhlTjiBKLFCnebM3BakWXtP3EITYQTBi+hPq+juDkihH5JgqPaDc2dLjSgYXAvkp48B3tW1/OrwS8IZRDHrlD8ST3tjKYwuVwNTmctwU+004m+OGk72nkrakJpyhA/bj/pcyrGfL2J2ttRY974Gr4clbVW77czcFsvmKYkyl/G0KRgz78eia4sjpBwH+yzGJN2Po2n0lMbSMG44NsVS0w35nmcZuDWL1KXBAikmZnmPVJnLMFPtHdWUQYnRtGTvc6lpSgWN7ltFLc12JCXW1gu+F+6maI8i9LfZKdDdkFedpqJG87RW63+1dorWOrDnFcsZdArdBGXnxI1BrdqFJGE/+l4oU7s/ZS7joFLtbAc8pigOpbx2avOYnVyucIotPCAIHjIXSbmte2c5tSdRQIRyrH1lZWVlZWXl/+MXp7orWmvB2zEAAAAASUVORK5CYII=" class="card-img-top" alt="Triangle">
+                    <div class="card-body">
+                        <h5 class="card-title">Area of Triangle</h5>
+                        <p class="card-text">You will learn about area of triangle</p>
+                        
+                        <a href="/learnTriangle" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Circle Section -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEX///8AAAD7+/v39/fg4ODm5uaOjo7AwMCnp6dCQkLu7u52dnbW1ta/v7/c3Nx+fn4zMzOvr69qampISEi4uLipqanLy8tiYmKenp44ODghISFwcHCFhYVKSkp5eXnq6uotLS1WVlaXl5cZGRkkJCRYWFgGohqXAAAHC0lEQVR4nO2d54KiMBCAj96lKcWOuu//irckcOrKLQHSyfdXCYFMy2RI/vxRKBQKhUKhUCgUCoWCEoZVRK4dB1mT516eN1kQ225UWAbrjmHAL9xzvtf+xz4/u8WFdSfnohdV+d9He6esCuGGM6zywTFLaq9OBsc0v4WsO42MHh3e+l6X9s7Z/FA6w9o4O7us3/55iHRGfZ6C8yqajR1ZI/+3HLt5FdiISi9nE8bPvmapiXydmWbPC2NuxVVPk76TXoX+dD1m5fWXJymP0urbff9OqT+3jfSfwB7ntkEKM+hfv7usa77bC8JhuhiQw+q1KNhgaG1z7jV5zErR4tI5h3uFS3v06t6NIw/xjt7p33WLtdnttdNH5jYn7by6g71lp4sGUuwtT8GEBv5Bxk1HcBw9hianE9AdsRvs4A1sYjf4nXBPXlP0I7jHnkmYAwcwJy1CnSLQH8ZLQlhAn0BjllB2HFtw14ZOaOXDWA6vOxohpjaAEDiMZ2r3M4BqXGnGVBZQCo9SrsOk/EIhUGxwxL2jOPSVAgBVH3/s9AF0wizCDCg7Lunb2DT14QdQ/wl7RqANJdl7/ALIcsUk7wBmgkeSdxgBBHEZufbBA97ItY/ADUyMSbV+oOvmh9kRHMWY/Xy0JSWmizYfD9g9IgGLuuNBRCE7In7RYW9kntwIRDcmazfxzhF7jGqwdfSfANePM7JqwyUPY3vLwdyjM+43thwDq8/YsppN/IaJcQ53YTMfHAO8dzzpqYTBjB6FVncSHA21scwVR0PYueKJbcJWGHhZyHvHaru2PBu+5yZY+6QN3/ZLG2lltMHRGyI0y+UU2GTeigae+Mv9mMfJjOl/7JaGNil30dpPFg6BzmMw8w5Qo/mXH7maMg1zXGJsQLjGvBZiBH1J8Hbg2BU+2c1PL7YhwwNvb4jwmB10taVcnFd7AqK5CdTWStW4e0OEeqbFP9BZrcOAM08TfW4nTZ9cZ4WWRy4n9sNs5/jE1s3cSfSGCPcZjruNSCsivSFBNSM6TQQIZ57o01M2be4iINMbIgST8xkxrdoVTIST88O4EnXUSCZOohwahStYcSfGJyXX2Zkh/GmLYzrXCbZhTpOMf8R5/mmIdJKYHoQTUiim6OE39xm2IbwJ1jQUKmLrqSY4/Rv3OcQhNhOKRfJFKUhmfPc6R/unQbb8jxgZsr8oBPQVLa2/KJD+WQmphjB1hmYgSzHVECgiWuAmYMgGaRCHxidT20gBGzEUK4TJk/4kQjQ1Lre1F2NYiLPas6iGBlgQlNKmXJTlik9qTTsh/G3PVyXpFEqk8hpDWFMKjel4kaglxMLvMC7Sgre4zgKmCMfdRSRYLviVDdKqtbjuENUhomkrn6BZyVhchw9c/vjqRSD4E46vmGWCP+F4/qURo0xomO947Gv0TyfR1tVeSVACU0/cwBuE3uMJRU/EjH4PUuflH0P59VB+Wyq/P5Q/ppE/LpV/biH//FD+Ob78eRr5c23y50vlz3mvYN1C/rUncR2iibh+KK67QF0Dln8dX/5ajBXU08hfEyVyXRtagan8tYny15eCGmHxpohTaoTlr/OWv1Zf2O8t0L8ndAT0F9O+mWm/e0KZaPHEtO+e5P92TcDvD6upcz7pvyFdwXfA8n/LLf/3+CvYU0H+fTFAWkfqvU1WsD+NYHsMzTH88u8TJf9eX8Ls17afv9Ai/Z57Au2bOHum1/pEqfe+XMH+pfLvQbuCfYRXsBc05/t5n3CsV/O+J/vymET+ffXlPxthBedb8HpGCTi6C9MRutKfM9OdKcdX8Tfes4J4Pe8JddUeBfnP7OLy3DXMlkH6s/NIHTo4i7YClkQkKf0Zlis4h7Q7S5a1oAJtIXtcrsznAfNypjPBB1zBudwrOFu903QmMw0QV9HIqIDohoHXAF6CzoomfJe0Z/3gtFdaNT5GWyatXWmmp6wrZf2PaalEB1R+wkb0HZDY0E50suF+ozFIFV0SasMIBzDBlHSaAPCMmkfab5jACbL51ix8QO0guUqsgzBNe2DIbM8CDiNBUYUCyvJjwU6E9mSKUqIHHUX4HWhUtRr/Mzq1xih6+kknqle8xnx7hc1ykd+7HGBn7hUum6NXd9jkgZflZyuDHdICHDYvDLrWMp6WLa2+V4m77LX7VdK1dODp+Vr8Th+/Y7l07kP66alvxOZFPl/R0/71a141fZqzqbz+8iTlttYsjLV/ZCm6HzPT7HlhzCqAQcQpn33VGjsa0ybTsZuXK0oRypJ1J9BeqUvbdTbW++zVsDaOa5f12z8Dh1vp/CCscm2AfVJ7dbIf+im/cS6cn+hFVQ49ygBlFfK1hj4Bv3DPp8Exg2N6OrsFj35hKsaliFw7DrKvU+7lp68siG03Ki7CDpxCoVAoFAqFQqFQKMTjL/wsRCCXuNyCAAAAAElFTkSuQmCC" class="card-img-top" alt="Circle">
+                    <div class="card-body">
+                        <h5 class="card-title">Area of Circle</h5>
+                        <p class="card-text">You will learn about area of circle</p>
+                        
+                        <a href="/learnCircle" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rectangle Section -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAG1BMVEX///8AAACamprQ0NCXl5fn5+eTk5N7e3vV1dV397rFAAAA3UlEQVR4nO3cWw3DABADwTRv/ohLwR+nOo1mAFhaAl4WAAAAAAAAAAAAAAAAAADgDx3n+lTnMVK4fZ5rU5gWXvf2PPc1WLiODE1bBwv3kaFpu8KUwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1CmMKaxTGFNYojCmsURhTWKMwprBGYUxhjcKYwhqFMYU1k4Xv/6d5/8fQYynMvP+vDQAAAAAAAAAAAAAAAAAA+LEvMZEOgZADqPIAAAAASUVORK5CYII=" class="card-img-top" alt="Rectangle">
+                    <div class="card-body">
+                        <h5 class="card-title">Area of Rectangle</h5>
+                        <p class="card-text">You will learn about area of rectangle</p>
+                        <a href="/learnRectangle" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Square Section -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAFVBMVEX///8AAABQUFBdXV1TU1Po6OgXFxcsgICoAAABbklEQVR4nO3dsW0DQRAEQYpPMv+Q5ckf48TGoyqAwTVw/j4eAAAAAAAAAAAA3NP7ejZc70OF10/Fdajw+e2wP89zhZ/Xt3/o8/U5Wvg6NL14HS08Nb04+AyF/0Rhc3qhsDm9UNicXihsTi8UNqcXCpvTC4XN6YXC5vRCYXN6obA5vVDYnF4obE4vFDanFwqb0wuFzemFwub0QmFzeqGwOb1Q2JxeKGxOLxQ2pxcKm9MLhc3phcLm9EJhc3qhsDm9UNicXihsTi8UNqcXCpvTC4XN6YXC5vRCYXN6obA5vVDYnF4obE4vFDanFwqb0wuFzemFwub0QmFzeqGwOb1Q2JxeKGxOLxQ2pxcKm9MLhc3phcLm9EJhc3qhsDm9UNicXihsTi8UNqcXCpvTC4XN6YXC5vRCYXN6obA5vVDYnF4obE4vFDanFwqb0wuFzenF2cL737C8/x3SiFOF978HfP+bzgAAAAAAAAAAAHzbLzcgDN0ZDoabAAAAAElFTkSuQmCC" class="card-img-top" alt="Square">
+                    <div class="card-body">
+                        <h5 class="card-title">Area of Square</h5>
+                        <p class="card-text">You will learn about area of square</p>
+                    
+                        <a href="/learnSquare" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p>Progress: <span th:text="${student.currentLevel == 1 ? 'Beginner' : (student.currentLevel == 2 ? 'Medium' : 'Hard')}"></span></p>
+        <form action="/test" method="get">
+            <button type="submit" class="btn btn-primary mt-4">Take Test</button>
+        </form>
+    </div>
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Area Learning. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
